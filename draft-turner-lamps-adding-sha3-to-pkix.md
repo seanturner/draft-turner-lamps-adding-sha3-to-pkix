@@ -42,7 +42,6 @@ normative:
       NIST: FIPS PUB 202
 
 informative:
-  RFC3776:
   RFC4055:
   I-D.curdle-pkix:
 
@@ -58,7 +57,7 @@ This document describes the conventions for using the SHA-3 family of hash funct
 
 Familiarity with [RFC5280] is assumed.
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC 2119].
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC2119].
 
 # Algorithm Support
 
