@@ -42,6 +42,7 @@ normative:
       NIST: FIPS PUB 202
 
 informative:
+  RFC3766:
   RFC4055:
   I-D.curdle-pkix:
 
@@ -93,7 +94,7 @@ When using the id-sha3-224, id-sha3-s256, id-sha3-384, or id-sha3-512 algorithm 
 
 ## ECDSA Signature Algorithm with SHA-3
 
-The ECDSA (Elliptic Curve Digital Signature Algorithm) is defined in [SHS].  When ECDSA is used in conjunction with one of the SHA-3 one-way hash functions the OID is, respectively:
+The ECDSA (Elliptic Curve Digital Signature Algorithm) is defined in [DSS].  When ECDSA is used in conjunction with one of the SHA-3 one-way hash functions the OID is, respectively:
 
 ~~~
   id-ecdsa-with-sha3-224 ::= { joint-iso-itu-t(2) country(16)
