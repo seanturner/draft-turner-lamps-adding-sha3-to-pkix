@@ -153,6 +153,8 @@ where the four digits at the end represent the ASN.1's publication date.
 
 # 2015 ASN.1 Module
 
+~~~
+
 PKIXAlgsForSHA3-2015 { iso(1) identified-organization(3) dod(6)
   internet(1) security(5) mechanisms(5) pkix(7) id-mod(0)
   id-mod-pkix1-sha3-2015(TBD) }
@@ -313,6 +315,7 @@ id-ecdsa-with-sha3-512 ::= { joint-iso-itu-t(2) country(16)
                              sigAlgs(3) 12 }
 
 END
+~~~
 
 # 1988 ASN.1 Module
 
@@ -388,3 +391,4 @@ id-ecdsa-with-sha3-512 ::= { joint-iso-itu-t(2) country(16)
 -- See [RFC5480] for ECDSA Keys and Curves. 
 
 END
+~~~
