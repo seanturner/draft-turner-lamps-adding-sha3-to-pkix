@@ -44,7 +44,7 @@ normative:
 informative:
   RFC3766:
   RFC4055:
-  I-D.curdle-pkix:
+  I-D.ietf-curdle-pkix:
 
 --- abstract
 
@@ -54,7 +54,7 @@ This document describes the conventions for using the SHA-3 family of hash funct
 
 # Introduction
 
-[RFC3279], [RFC4055], [RFC5480], and [I-D.curdle-pkix] defines the contents of the signatureAlgorithm, signatureValue, signature, and subjectPublicKeyInfo fields within Internet X.509 certificates and CRLs (Certificate Revocation Lists) [RFC5280] for a number of algorithms.  This document does the same for the SHA-3 family of one-way hash functions and their use with the ECDSA and RSA PKCS#1 v1.5 digital signature algorithms.   
+[RFC3279], [RFC4055], [RFC5480], and [I-D.ietf-curdle-pkix] defines the contents of the signatureAlgorithm, signatureValue, signature, and subjectPublicKeyInfo fields within Internet X.509 certificates and CRLs (Certificate Revocation Lists) [RFC5280] for a number of algorithms.  This document does the same for the SHA-3 family of one-way hash functions and their use with the ECDSA and RSA PKCS#1 v1.5 digital signature algorithms.   
 
 Familiarity with [RFC5280] is assumed.
 
