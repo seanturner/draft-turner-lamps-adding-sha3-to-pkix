@@ -26,20 +26,20 @@ normative:
   RFC5912:
 
   DSS:
-       title: "Digital Signature Standard, version 4"
-       date: 2013
-       author:
-         org: National Institute of Standards and Technology, U.S. Department of Commerce
-       seriesinfo:
-         NIST: FIPS PUB 186-4
+    title: "Digital Signature Standard, version 4"
+    date: 2013
+    author:
+      org: National Institute of Standards and Technology, U.S. Department of Commerce
+    seriesinfo:
+      NIST: FIPS PUB 186-4
 
   SHA3:
-       title: SHA-3 Standard: Permutation-Based Hash and Extendable-Output Functions
-       date: 2015-08
-       author:
-         org: National Institute of Standards and Technology, U.S. Department of Commerce
-       seriesinfo:
-         NIST: FIPS PUB 202
+    title: SHA-3 Standard: Permutation-Based Hash and Extendable-Output Functions
+    date: 2015-08
+    author:
+      org: National Institute of Standards and Technology, U.S. Department of Commerce
+    seriesinfo:
+      NIST: FIPS PUB 202
 
 informative:
   RFC3776:
