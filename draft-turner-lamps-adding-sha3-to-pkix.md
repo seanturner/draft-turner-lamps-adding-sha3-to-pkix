@@ -2,14 +2,12 @@
 title: SHA-3 Related Algorithms and Identifiers for PKIX
 abbrev: SHA-3 for PKIX
 docname: draft-turner-lamps-adding-sha3-to-pkix-latest
-date: 2017-03-06
+date: {DATE}
 category: std
-
 ipr: trust200902
 area: Security
 workgroup: Network Working Group
 keyword: Internet-Draft
-
 stand_alone: yes
 pi: [toc, sortrefs, symrefs]
 
@@ -28,20 +26,20 @@ normative:
   RFC5912:
 
   DSS:
-        title: "Digital Signature Standard, version 4"
-        date: 2013
-        author:
-          org: National Institute of Standards and Technology, U.S. Department of Commerce
+       title: "Digital Signature Standard, version 4"
+       date: 2013
+       author:
+         org: National Institute of Standards and Technology, U.S. Department of Commerce
        seriesinfo:
-          NIST: FIPS PUB 186-4
+         NIST: FIPS PUB 186-4
 
   SHA3:
-        title: SHA-3 Standard: Permutation-Based Hash and Extendable-Output Functions
-        date: 2015-08
-        author:
-          org: National Institute of Standards and Technology, U.S. Department of Commerce
-        seriesinfo:
-          NIST: FIPS PUB 202
+       title: SHA-3 Standard: Permutation-Based Hash and Extendable-Output Functions
+       date: 2015-08
+       author:
+         org: National Institute of Standards and Technology, U.S. Department of Commerce
+       seriesinfo:
+         NIST: FIPS PUB 202
 
 informative:
   RFC3776:
