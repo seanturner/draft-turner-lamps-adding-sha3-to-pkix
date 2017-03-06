@@ -9,3 +9,5 @@
 .targets.mk
 venv/
 issues.json
+lib
+draft-turner-lamps-adding-sha3-to-pkix.md
