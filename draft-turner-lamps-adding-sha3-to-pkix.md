@@ -34,7 +34,7 @@ normative:
       NIST: FIPS PUB 186-4
 
   SHA3:
-    title: SHA-3 Standard: Permutation-Based Hash and Extendable-Output Functions
+    title: SHA-3 Standard - Permutation-Based Hash and Extendable-Output Functions
     date: 2015-08
     author:
       org: National Institute of Standards and Technology, U.S. Department of Commerce
