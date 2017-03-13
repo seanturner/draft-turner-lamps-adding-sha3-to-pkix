@@ -4,8 +4,8 @@
 
 Network Working Group                                          S. Turner
 Internet-Draft                                                     sn3rd
-Intended status: Standards Track                           March 6, 2017
-Expires: September 7, 2017
+Intended status: Standards Track                          March 13, 2017
+Expires: September 14, 2017
 
 
            SHA-3 Related Algorithms and Identifiers for PKIX
@@ -35,7 +35,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on September 7, 2017.
+   This Internet-Draft will expire on September 14, 2017.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Turner                  Expires September 7, 2017               [Page 1]
+Turner                 Expires September 14, 2017               [Page 1]
 
 Internet-Draft               SHA-3 for PKIX                   March 2017
 
@@ -74,7 +74,7 @@ Table of Contents
      5.1.  Normative References  . . . . . . . . . . . . . . . . . .   5
      5.2.  Informative References  . . . . . . . . . . . . . . . . .   6
    Appendix A.  2015 ASN.1 Module  . . . . . . . . . . . . . . . . .   6
-   Appendix B.  1988 ASN.1 Module  . . . . . . . . . . . . . . . . .  10
+   Appendix B.  1988 ASN.1 Module  . . . . . . . . . . . . . . . . .   9
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  11
 
 1.  Introduction
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Turner                  Expires September 7, 2017               [Page 2]
+Turner                 Expires September 14, 2017               [Page 2]
 
 Internet-Draft               SHA-3 for PKIX                   March 2017
 
@@ -126,25 +126,25 @@ Internet-Draft               SHA-3 for PKIX                   March 2017
    of security [RFC3766].  The OIDs (Object Identifiers) for these four
    hash functions are as follows:
 
-    id-sha3-224 OBJECT IDENTIFIER ::= { joint-iso-itu-t(2) country(16)
-                                        us(840) organization(1) gov(101)
-                                        csor(3) nistAlgorithm(4)
-                                        hashAlgs(2) 7 }
+     id-sha3-224 OBJECT IDENTIFIER ::= {
+       joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+       csor(3) nistAlgorithm(4) hashAlgs(2) 7
+       }
 
-    id-sha3-256 OBJECT IDENTIFIER ::= { joint-iso-itu-t(2) country(16)
-                                        us(840) organization(1) gov(101)
-                                        csor(3) nistAlgorithm(4)
-                                        hashAlgs(2) 8 }
+     id-sha3-256 OBJECT IDENTIFIER ::= {
+       joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+       csor(3) nistAlgorithm(4) hashAlgs(2) 8
+       }
 
-    id-sha3-384 OBJECT IDENTIFIER ::= { joint-iso-itu-t(2) country(16)
-                                        us(840) organization(1) gov(101)
-                                        csor(3) nistAlgorithm(4)
-                                        hashAlgs(2) 9 }
+     id-sha3-384 OBJECT IDENTIFIER ::= {
+       joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+       csor(3) nistAlgorithm(4) hashAlgs(2) 9
+       }
 
-    id-sha3-512 OBJECT IDENTIFIER ::= { joint-iso-itu-t(2) country(16)
-                                        us(840) organization(1) gov(101)
-                                        csor(3) nistAlgorithm(4)
-                                        hashAlgs(2) 10 }
+     id-sha3-512 OBJECT IDENTIFIER ::= {
+       joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+       csor(3) nistAlgorithm(4) hashAlgs(2) 10
+       }
 
    When using the id-sha3-224, id-sha3-s256, id-sha3-384, or id-sha3-512
    algorithm identifiers, the parameters field MUST be absent; not NULL
@@ -165,30 +165,30 @@ Internet-Draft               SHA-3 for PKIX                   March 2017
 
 
 
-Turner                  Expires September 7, 2017               [Page 3]
+Turner                 Expires September 14, 2017               [Page 3]
 
 Internet-Draft               SHA-3 for PKIX                   March 2017
 
 
-     id-ecdsa-with-sha3-224 ::= { joint-iso-itu-t(2) country(16)
-                                  us(840) organization(1) gov(101)
-                                  csor(3) nistAlgorithm(4)
-                                  sigAlgs(3) 9 }
+     id-ecdsa-with-sha3-224 OBJECT IDENTIFIER ::= {
+       joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+       csor(3) nistAlgorithm(4) sigAlgs(3) 9
+       }
 
-     id-ecdsa-with-sha3-256 ::= { joint-iso-itu-t(2) country(16)
-                                  us(840) organization(1) gov(101)
-                                  csor(3) nistAlgorithm(4)
-                                  sigAlgs(3) 10 }
+     id-ecdsa-with-sha3-256 OBJECT IDENTIFIER ::= {
+       joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+       csor(3) nistAlgorithm(4) sigAlgs(3) 10
+       }
 
-     id-ecdsa-with-sha3-384 ::= { joint-iso-itu-t(2) country(16)
-                                  us(840) organization(1) gov(101)
-                                  csor(3) nistAlgorithm(4)
-                                  sigAlgs(3) 11 }
+     id-ecdsa-with-sha3-384 OBJECT IDENTIFIER ::= {
+       joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+       csor(3) nistAlgorithm(4) sigAlgs(3) 11
+       }
 
-     id-ecdsa-with-sha3-512 ::= { joint-iso-itu-t(2) country(16)
-                                  us(840) organization(1) gov(101)
-                                  csor(3) nistAlgorithm(4)
-                                  sigAlgs(3) 12 }
+     id-ecdsa-with-sha3-512 OBJECT IDENTIFIER ::= {
+       joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+       csor(3) nistAlgorithm(4) sigAlgs(3) 12
+       }
 
    When these algorithm identifiers appear as the algorithm field in an
    AlgorithmIdentifier, the encoding MUST omit the parameters field.
@@ -221,7 +221,7 @@ Internet-Draft               SHA-3 for PKIX                   March 2017
 
 
 
-Turner                  Expires September 7, 2017               [Page 4]
+Turner                 Expires September 14, 2017               [Page 4]
 
 Internet-Draft               SHA-3 for PKIX                   March 2017
 
@@ -277,7 +277,7 @@ Internet-Draft               SHA-3 for PKIX                   March 2017
 
 
 
-Turner                  Expires September 7, 2017               [Page 5]
+Turner                 Expires September 14, 2017               [Page 5]
 
 Internet-Draft               SHA-3 for PKIX                   March 2017
 
@@ -322,32 +322,39 @@ Appendix A.  2015 ASN.1 Module
 
    IMPORTS
 
-   -- FROM [RFC5912]
-
    PUBLIC-KEY, SIGNATURE-ALGORITHM, DIGEST-ALGORITHM, SMIME-CAPS
-   SIGNATURE-ALGORITHM, DIGEST-ALGORITHM, SMIME-CAPS
-   FROM AlgorithmInformation-2009
+   FROM AlgorithmInformation-2009 -- in [RFC5912]
      { iso(1) identified-organization(3) dod(6) internet(1) security(5)
        mechanisms(5) pkix(7) id-mod(0)
        id-mod-algorithmInformation-02(58) }
 
+   pk-ec, id-ecPublicKey, ECPoint, ECDSA-Sig-Value
+   FROM PKIXAlgs-2009 -- in [RFC5912]
 
 
-Turner                  Expires September 7, 2017               [Page 6]
+
+Turner                 Expires September 14, 2017               [Page 6]
 
 Internet-Draft               SHA-3 for PKIX                   March 2017
 
 
-   -- FROM [RFC5912]
-
-   id-ecPublicKey, ECPoint, ECDSA-Sig-Value
-   PKIXAlgs-2009 { iso(1) identified-organization(3) dod(6)
-        internet(1) security(5) mechanisms(5) pkix(7) id-mod(0)
+      { iso(1) identified-organization(3) dod(6) internet(1) security(5)
+        mechanisms(5) pkix(7) id-mod(0)
         id-mod-pkix1-algorithms2008-02(56) }
 
    ;
 
-   -- One-Way Hash Functions
+   --
+   -- Message Digest Algorithms (mda-)
+   --
+
+   HashAlgs DIGEST-ALGORITHM ::= {
+      ...,
+      -- This expands HashAlgs from [RFC5912]
+      mda-sha3-256 |
+      mda-sha3-384 |
+      mda-sha3-512
+     }
 
    -- SHA3-256
 
@@ -356,10 +363,10 @@ Internet-Draft               SHA-3 for PKIX                   March 2017
      PARAMS ARE absent
      }
 
-   id-sha3-256 OBJECT IDENTIFIER ::= { joint-iso-itu-t(2) country(16)
-                                       us(840) organization(1) gov(101)
-                                       csor(3) nistAlgorithm(4)
-                                       hashAlgs(2) 8 }
+   id-sha3-256 OBJECT IDENTIFIER ::= {
+     joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+     csor(3) nistAlgorithm(4) hashAlgs(2) 8
+     }
 
    -- SHA3-384
 
@@ -368,10 +375,10 @@ Internet-Draft               SHA-3 for PKIX                   March 2017
      PARAMS ARE absent
      }
 
-   id-sha3-384 OBJECT IDENTIFIER ::= { joint-iso-itu-t(2) country(16)
-                                       us(840) organization(1) gov(101)
-                                       csor(3) nistAlgorithm(4)
-                                       hashAlgs(2) 9 }
+   id-sha3-384 OBJECT IDENTIFIER ::= {
+     joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+     csor(3) nistAlgorithm(4) hashAlgs(2) 9
+     }
 
    -- SHA3-512
 
@@ -380,38 +387,23 @@ Internet-Draft               SHA-3 for PKIX                   March 2017
      PARAMS ARE absent
      }
 
-   id-sha3-512 OBJECT IDENTIFIER ::= { joint-iso-itu-t(2) country(16)
-                                       us(840) organization(1) gov(101)
-                                       csor(3) nistAlgorithm(4)
-                                       hashAlgs(2) 10 }
-
-   --
 
 
-
-Turner                  Expires September 7, 2017               [Page 7]
+Turner                 Expires September 14, 2017               [Page 7]
 
 Internet-Draft               SHA-3 for PKIX                   March 2017
 
 
+   id-sha3-512 OBJECT IDENTIFIER ::= {
+     joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+     csor(3) nistAlgorithm(4) hashAlgs(2) 10
+     }
+
+   --
    -- Public Key (pk-) Algorithms
    --
 
-   PublicKeys PUBLIC-KEY ::= {
-     ...,
-     pk-ec
-     }
-
-   -- From [RFC5912] - Here so it compiles.
-
-   pk-ec PUBLIC-KEY ::= {
-     IDENTIFIER id-ecPublicKey
-     KEY ECPoint
-     PARAMS TYPE ECParameters ARE required
-     -- Private key format not in this module --
-     CERT-KEY-USAGE { digitalSignature, nonRepudiation, keyAgreement,
-                      keyCertSign, cRLSign }
-     }
+   -- See [RFC5912].
 
    --
    -- Signature Algorithms (sa-)
@@ -425,40 +417,21 @@ Internet-Draft               SHA-3 for PKIX                   March 2017
      sa-ecdsaWithSHA3-512
      }
 
-   --
-   -- SMIME Capabilities (sa-)
-   --
-
-   SMimeCaps SMIME-CAPS ::= {
-     -- The expands SMimeCaps from [RFC5912]
-     sa-ecdsaWithSHA3-256.&smimeCaps |
-     sa-ecdsaWithSHA3-384.&smimeCaps |
-     sa-ecdsaWithSHA3-512.&smimeCaps
-     }
-
    -- ECDSA with SHA3-256
 
    sa-ecdsaWithSHA3-256 SIGNATURE-ALGORITHM ::= {
       IDENTIFIER id-ecdsa-with-SHA3-256
       VALUE ECDSA-Sig-Value
       PARAMS TYPE NULL ARE absent
-
-
-
-Turner                  Expires September 7, 2017               [Page 8]
-
-Internet-Draft               SHA-3 for PKIX                   March 2017
-
-
       HASHES { mda-sha3-256 }
       PUBLIC-KEYS { pk-ec }
       SMIME-CAPS { IDENTIFIED BY id-ecdsa-with-SHA3-256 }
       }
 
-   id-ecdsa-with-sha3-256 ::= { joint-iso-itu-t(2) country(16)
-                                us(840) organization(1) gov(101)
-                                csor(3) nistAlgorithm(4)
-                                sigAlgs(3) 10 }
+   id-ecdsa-with-sha3-256 OBJECT IDENTIFIER ::= {
+     joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+     csor(3) nistAlgorithm(4) sigAlgs(3) 10
+     }
 
    -- ECDSA with SHA3-384
 
@@ -469,12 +442,20 @@ Internet-Draft               SHA-3 for PKIX                   March 2017
       HASHES { mda-sha3-384 }
       PUBLIC-KEYS { pk-ec }
       SMIME-CAPS { IDENTIFIED BY id-ecdsa-with-SHA3-384 }
+
+
+
+Turner                 Expires September 14, 2017               [Page 8]
+
+Internet-Draft               SHA-3 for PKIX                   March 2017
+
+
       }
 
-   id-ecdsa-with-sha3-384 ::= { joint-iso-itu-t(2) country(16)
-                                us(840) organization(1) gov(101)
-                                csor(3) nistAlgorithm(4)
-                                sigAlgs(3) 11 }
+   id-ecdsa-with-sha3-384 OBJECT IDENTIFIER ::= {
+     joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+     csor(3) nistAlgorithm(4) sigAlgs(3) 11
+     }
 
    -- ECDSA with SHA3-512
 
@@ -487,24 +468,25 @@ Internet-Draft               SHA-3 for PKIX                   March 2017
       SMIME-CAPS { IDENTIFIED BY id-ecdsa-with-SHA3-512 }
       }
 
-   id-ecdsa-with-sha3-512 ::= { joint-iso-itu-t(2) country(16)
-                                us(840) organization(1) gov(101)
-                                csor(3) nistAlgorithm(4)
-                                sigAlgs(3) 12 }
+   id-ecdsa-with-sha3-512 OBJECT IDENTIFIER ::= {
+     joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+     csor(3) nistAlgorithm(4) sigAlgs(3) 12
+     }
+
+   --
+   -- SMIME Capabilities (sa-)
+   --
+
+   SMimeCaps SMIME-CAPS ::= {
+     ...,
+     -- The expands SMimeCaps from [RFC5912]
+     sa-ecdsaWithSHA3-256.&smimeCaps |
+     sa-ecdsaWithSHA3-384.&smimeCaps |
+     sa-ecdsaWithSHA3-512.&smimeCaps
+     }
+
 
    END
-
-
-
-
-
-
-
-
-Turner                  Expires September 7, 2017               [Page 9]
-
-Internet-Draft               SHA-3 for PKIX                   March 2017
-
 
 Appendix B.  1988 ASN.1 Module
 
@@ -515,6 +497,14 @@ Appendix B.  1988 ASN.1 Module
    DEFINITIONS EXPLICIT TAGS ::=
 
    BEGIN
+
+
+
+
+Turner                 Expires September 14, 2017               [Page 9]
+
+Internet-Draft               SHA-3 for PKIX                   March 2017
+
 
    -- EXPORTS ALL;
 
@@ -527,26 +517,26 @@ Appendix B.  1988 ASN.1 Module
    -- SHA3-256
    -- Parameters are absent
 
-   id-sha3-256 OBJECT IDENTIFIER ::= { joint-iso-itu-t(2) country(16)
-                                       us(840) organization(1) gov(101)
-                                       csor(3) nistAlgorithm(4)
-                                       hashAlgs(2) 8 }
+   id-sha3-256 OBJECT IDENTIFIER ::= {
+     joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+     csor(3) nistAlgorithm(4) hashAlgs(2) 8
+     }
 
    -- SHA3-384
    -- Parameters are absent
 
-   id-sha3-384 OBJECT IDENTIFIER ::= { joint-iso-itu-t(2) country(16)
-                                       us(840) organization(1) gov(101)
-                                       csor(3) nistAlgorithm(4)
-                                       hashAlgs(2) 9 }
+   id-sha3-384 OBJECT IDENTIFIER ::= {
+     joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+     csor(3) nistAlgorithm(4) hashAlgs(2) 9
+     }
 
    -- SHA3-512
    -- Parameters are absent
 
-   id-sha3-512 OBJECT IDENTIFIER ::= { joint-iso-itu-t(2) country(16)
-                                       us(840) organization(1) gov(101)
-                                       csor(3) nistAlgorithm(4)
-                                       hashAlgs(2) 10 }
+   id-sha3-512 OBJECT IDENTIFIER ::= {
+     joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+     csor(3) nistAlgorithm(4) hashAlgs(2) 10
+     }
 
    --
    -- ECDSA Keys, Signatures, and Curves
@@ -554,32 +544,32 @@ Appendix B.  1988 ASN.1 Module
 
    -- OID for ECDSA signatures with SHA3-256
 
+   id-ecdsa-with-sha3-256 OBJECT IDENTIFIER ::= {
+     joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+     csor(3) nistAlgorithm(4) sigAlgs(3) 10
+     }
+
+   -- OID for ECDSA signatures with SHA3-384
+
+   id-ecdsa-with-sha3-384 OBJECT IDENTIFIER ::= {
+     joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+     csor(3) nistAlgorithm(4) sigAlgs(3) 11
 
 
 
-Turner                  Expires September 7, 2017              [Page 10]
+Turner                 Expires September 14, 2017              [Page 10]
 
 Internet-Draft               SHA-3 for PKIX                   March 2017
 
 
-   id-ecdsa-with-sha3-256 ::= { joint-iso-itu-t(2) country(16)
-                                us(840) organization(1) gov(101)
-                                csor(3) nistAlgorithm(4)
-                                sigAlgs(3) 10 }
-
-   -- OID for ECDSA signatures with SHA3-384
-
-   id-ecdsa-with-sha3-384 ::= { joint-iso-itu-t(2) country(16)
-                                us(840) organization(1) gov(101)
-                                csor(3) nistAlgorithm(4)
-                                sigAlgs(3) 11 }
+     }
 
    -- OID for ECDSA signatures with SHA3-512
 
-   id-ecdsa-with-sha3-512 ::= { joint-iso-itu-t(2) country(16)
-                                us(840) organization(1) gov(101)
-                                csor(3) nistAlgorithm(4)
-                                sigAlgs(3) 12 }
+   id-ecdsa-with-sha3-512 OBJECT IDENTIFIER ::= {
+     joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+     csor(3) nistAlgorithm(4) sigAlgs(3) 12
+     }
 
    -- See [RFC5480] for ECDSA-Sig-Value, which is the format for
    -- the value of an ECDSA signature value.
@@ -613,4 +603,14 @@ Author's Address
 
 
 
-Turner                  Expires September 7, 2017              [Page 11]
+
+
+
+
+
+
+
+
+
+
+Turner                 Expires September 14, 2017              [Page 11]
