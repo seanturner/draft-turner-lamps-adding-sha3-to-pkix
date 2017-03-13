@@ -69,25 +69,25 @@ This section describes cryptographic algorithms which may be used with the Inter
 The SHA-3 family of one-way hash functions is specified in [SHA3].  In the SHA-3 family, four hash functions are defined: SHA3-224, SHA3-256, SHA3-384, and SHA3-512; two extendable-output functions, called SHAKE128 and SHAKE256, are also defined but are not addressed by this document.  The respective output lengths, in bits, of the SHA-3 hash functions are 224, 256, 384, and 512 and as of this document's publication date correspond to 112, 128, 192, and 256 bits of security [RFC3766].  The OIDs (Object Identifiers) for these four hash functions are as follows:
 
 ~~~
-  id-sha3-224 OBJECT IDENTIFIER ::= { joint-iso-itu-t(2) country(16)
-                                      us(840) organization(1) gov(101)
-                                      csor(3) nistAlgorithm(4)
-                                      hashAlgs(2) 7 }
+  id-sha3-224 OBJECT IDENTIFIER ::= {
+    joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+    csor(3) nistAlgorithm(4) hashAlgs(2) 7
+    }
 
-  id-sha3-256 OBJECT IDENTIFIER ::= { joint-iso-itu-t(2) country(16)
-                                      us(840) organization(1) gov(101)
-                                      csor(3) nistAlgorithm(4)
-                                      hashAlgs(2) 8 }
+  id-sha3-256 OBJECT IDENTIFIER ::= {
+    joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+    csor(3) nistAlgorithm(4) hashAlgs(2) 8
+    }
 
-  id-sha3-384 OBJECT IDENTIFIER ::= { joint-iso-itu-t(2) country(16)
-                                      us(840) organization(1) gov(101)
-                                      csor(3) nistAlgorithm(4)
-                                      hashAlgs(2) 9 }
+  id-sha3-384 OBJECT IDENTIFIER ::= {
+    joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+    csor(3) nistAlgorithm(4) hashAlgs(2) 9
+    }
 
-  id-sha3-512 OBJECT IDENTIFIER ::= { joint-iso-itu-t(2) country(16)
-                                      us(840) organization(1) gov(101)
-                                      csor(3) nistAlgorithm(4)
-                                      hashAlgs(2) 10 }
+  id-sha3-512 OBJECT IDENTIFIER ::= {
+    joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+    csor(3) nistAlgorithm(4) hashAlgs(2) 10
+    }
 ~~~ 
 
 When using the id-sha3-224, id-sha3-s256, id-sha3-384, or id-sha3-512 algorithm identifiers, the parameters field MUST be absent; not NULL but absent.
@@ -97,25 +97,25 @@ When using the id-sha3-224, id-sha3-s256, id-sha3-384, or id-sha3-512 algorithm 
 The ECDSA (Elliptic Curve Digital Signature Algorithm) is defined in [DSS].  When ECDSA is used in conjunction with one of the SHA-3 one-way hash functions the OID is, respectively:
 
 ~~~
-  id-ecdsa-with-sha3-224 ::= { joint-iso-itu-t(2) country(16)
-                               us(840) organization(1) gov(101)
-                               csor(3) nistAlgorithm(4)
-                               sigAlgs(3) 9 }
+  id-ecdsa-with-sha3-224 OBJECT IDENTIFIER ::= {
+    joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+    csor(3) nistAlgorithm(4) sigAlgs(3) 9
+    }
 
-  id-ecdsa-with-sha3-256 ::= { joint-iso-itu-t(2) country(16)
-                               us(840) organization(1) gov(101)
-                               csor(3) nistAlgorithm(4)
-                               sigAlgs(3) 10 }
+  id-ecdsa-with-sha3-256 OBJECT IDENTIFIER ::= {
+    joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+    csor(3) nistAlgorithm(4) sigAlgs(3) 10
+    }
 
-  id-ecdsa-with-sha3-384 ::= { joint-iso-itu-t(2) country(16)
-                               us(840) organization(1) gov(101) 
-                               csor(3) nistAlgorithm(4)
-                               sigAlgs(3) 11 }
+  id-ecdsa-with-sha3-384 OBJECT IDENTIFIER ::= {
+    joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) 
+    csor(3) nistAlgorithm(4) sigAlgs(3) 11
+    }
 
-  id-ecdsa-with-sha3-512 ::= { joint-iso-itu-t(2) country(16)
-                               us(840) organization(1) gov(101)
-                               csor(3) nistAlgorithm(4)
-                               sigAlgs(3) 12 }
+  id-ecdsa-with-sha3-512 OBJECT IDENTIFIER ::= {
+    joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+    csor(3) nistAlgorithm(4) sigAlgs(3) 12
+    }
 ~~~
 
 When these algorithm identifiers appear as the algorithm field in an AlgorithmIdentifier, the encoding MUST omit the parameters field.  That is, the AlgorithmIdentifier SHALL be a SEQUENCE of one component: the OBJECT IDENTIFIER id-ecdsa-with-sha3-224, id-ecdsa-with-sha3-256, id-ecdsa-with-sha3-384, or id-ecdsa-with-sha3-512.
@@ -165,25 +165,31 @@ BEGIN
 
 IMPORTS
 
--- FROM [RFC5912]
-
 PUBLIC-KEY, SIGNATURE-ALGORITHM, DIGEST-ALGORITHM, SMIME-CAPS
-SIGNATURE-ALGORITHM, DIGEST-ALGORITHM, SMIME-CAPS
-FROM AlgorithmInformation-2009
+FROM AlgorithmInformation-2009 -- in [RFC5912]
   { iso(1) identified-organization(3) dod(6) internet(1) security(5)
     mechanisms(5) pkix(7) id-mod(0)
     id-mod-algorithmInformation-02(58) }
 
--- FROM [RFC5912]
-
-id-ecPublicKey, ECPoint, ECDSA-Sig-Value
-PKIXAlgs-2009 { iso(1) identified-organization(3) dod(6)
-     internet(1) security(5) mechanisms(5) pkix(7) id-mod(0)
+pk-ec, id-ecPublicKey, ECPoint, ECDSA-Sig-Value
+FROM PKIXAlgs-2009 -- in [RFC5912]
+   { iso(1) identified-organization(3) dod(6) internet(1) security(5)
+     mechanisms(5) pkix(7) id-mod(0)
      id-mod-pkix1-algorithms2008-02(56) }
 
 ;
 
--- One-Way Hash Functions
+--
+-- Message Digest Algorithms (mda-)
+--
+
+HashAlgs DIGEST-ALGORITHM ::= {
+   ...,
+   -- This expands HashAlgs from [RFC5912]
+   mda-sha3-256 |
+   mda-sha3-384 |
+   mda-sha3-512
+  }
 
 -- SHA3-256
 
@@ -192,10 +198,10 @@ mda-sha3-256 DIGEST-ALGORITHM ::= {
   PARAMS ARE absent
   }
 
-id-sha3-256 OBJECT IDENTIFIER ::= { joint-iso-itu-t(2) country(16)
-                                    us(840) organization(1) gov(101)
-                                    csor(3) nistAlgorithm(4)
-                                    hashAlgs(2) 8 }
+id-sha3-256 OBJECT IDENTIFIER ::= {
+  joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+  csor(3) nistAlgorithm(4) hashAlgs(2) 8
+  }
 
 -- SHA3-384
 
@@ -204,10 +210,10 @@ mda-sha3-384 DIGEST-ALGORITHM ::= {
   PARAMS ARE absent
   }
 
-id-sha3-384 OBJECT IDENTIFIER ::= { joint-iso-itu-t(2) country(16)
-                                    us(840) organization(1) gov(101)
-                                    csor(3) nistAlgorithm(4)
-                                    hashAlgs(2) 9 }
+id-sha3-384 OBJECT IDENTIFIER ::= {
+  joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+  csor(3) nistAlgorithm(4) hashAlgs(2) 9
+  }
 
 -- SHA3-512
 
@@ -216,30 +222,16 @@ mda-sha3-512 DIGEST-ALGORITHM ::= {
   PARAMS ARE absent
   }
 
-id-sha3-512 OBJECT IDENTIFIER ::= { joint-iso-itu-t(2) country(16)
-                                    us(840) organization(1) gov(101)
-                                    csor(3) nistAlgorithm(4)
-                                    hashAlgs(2) 10 }
+id-sha3-512 OBJECT IDENTIFIER ::= {
+  joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+  csor(3) nistAlgorithm(4) hashAlgs(2) 10
+  }
 
 --
 -- Public Key (pk-) Algorithms
 --
 
-PublicKeys PUBLIC-KEY ::= {
-  ...,
-  pk-ec   
-  }
-
--- From [RFC5912] - Here so it compiles.
-
-pk-ec PUBLIC-KEY ::= {
-  IDENTIFIER id-ecPublicKey
-  KEY ECPoint
-  PARAMS TYPE ECParameters ARE required
-  -- Private key format not in this module --
-  CERT-KEY-USAGE { digitalSignature, nonRepudiation, keyAgreement,
-                   keyCertSign, cRLSign }
-  }
+-- See [RFC5912].
 
 --
 -- Signature Algorithms (sa-)
@@ -253,17 +245,6 @@ SignatureAlgs SIGNATURE-ALGORITHM ::= {
   sa-ecdsaWithSHA3-512
   }
 
---
--- SMIME Capabilities (sa-)
---
-
-SMimeCaps SMIME-CAPS ::= {
-  -- The expands SMimeCaps from [RFC5912]
-  sa-ecdsaWithSHA3-256.&smimeCaps |
-  sa-ecdsaWithSHA3-384.&smimeCaps |
-  sa-ecdsaWithSHA3-512.&smimeCaps
-  }
-
 -- ECDSA with SHA3-256
 
 sa-ecdsaWithSHA3-256 SIGNATURE-ALGORITHM ::= {
@@ -275,10 +256,10 @@ sa-ecdsaWithSHA3-256 SIGNATURE-ALGORITHM ::= {
    SMIME-CAPS { IDENTIFIED BY id-ecdsa-with-SHA3-256 }
    }
 
-id-ecdsa-with-sha3-256 ::= { joint-iso-itu-t(2) country(16)
-                             us(840) organization(1) gov(101)
-                             csor(3) nistAlgorithm(4)
-                             sigAlgs(3) 10 }
+id-ecdsa-with-sha3-256 OBJECT IDENTIFIER ::= {
+  joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+  csor(3) nistAlgorithm(4) sigAlgs(3) 10
+  }
 
 -- ECDSA with SHA3-384
 
@@ -291,10 +272,10 @@ sa-ecdsaWithSHA3-384 SIGNATURE-ALGORITHM ::= {
    SMIME-CAPS { IDENTIFIED BY id-ecdsa-with-SHA3-384 }
    }
 
-id-ecdsa-with-sha3-384 ::= { joint-iso-itu-t(2) country(16)
-                             us(840) organization(1) gov(101)
-                             csor(3) nistAlgorithm(4)
-                             sigAlgs(3) 11 }
+id-ecdsa-with-sha3-384 OBJECT IDENTIFIER ::= {
+  joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+  csor(3) nistAlgorithm(4) sigAlgs(3) 11
+  }
 
 -- ECDSA with SHA3-512
 
@@ -307,10 +288,23 @@ sa-ecdsaWithSHA3-512 SIGNATURE-ALGORITHM ::= {
    SMIME-CAPS { IDENTIFIED BY id-ecdsa-with-SHA3-512 }
    }
 
-id-ecdsa-with-sha3-512 ::= { joint-iso-itu-t(2) country(16)
-                             us(840) organization(1) gov(101)
-                             csor(3) nistAlgorithm(4)
-                             sigAlgs(3) 12 }
+id-ecdsa-with-sha3-512 OBJECT IDENTIFIER ::= {
+  joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+  csor(3) nistAlgorithm(4) sigAlgs(3) 12
+  }
+
+--
+-- SMIME Capabilities (sa-)
+--
+
+SMimeCaps SMIME-CAPS ::= {
+  ...,
+  -- The expands SMimeCaps from [RFC5912]
+  sa-ecdsaWithSHA3-256.&smimeCaps |
+  sa-ecdsaWithSHA3-384.&smimeCaps |
+  sa-ecdsaWithSHA3-512.&smimeCaps
+  }
+
 
 END
 ~~~
@@ -337,26 +331,26 @@ BEGIN
 -- SHA3-256
 -- Parameters are absent
 
-id-sha3-256 OBJECT IDENTIFIER ::= { joint-iso-itu-t(2) country(16)
-                                    us(840) organization(1) gov(101)
-                                    csor(3) nistAlgorithm(4)
-                                    hashAlgs(2) 8 }
+id-sha3-256 OBJECT IDENTIFIER ::= {
+  joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+  csor(3) nistAlgorithm(4) hashAlgs(2) 8
+  }
 
 -- SHA3-384
 -- Parameters are absent
 
-id-sha3-384 OBJECT IDENTIFIER ::= { joint-iso-itu-t(2) country(16)
-                                    us(840) organization(1) gov(101)
-                                    csor(3) nistAlgorithm(4)
-                                    hashAlgs(2) 9 }
+id-sha3-384 OBJECT IDENTIFIER ::= {
+  joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+  csor(3) nistAlgorithm(4) hashAlgs(2) 9
+  }
 
 -- SHA3-512
 -- Parameters are absent
 
-id-sha3-512 OBJECT IDENTIFIER ::= { joint-iso-itu-t(2) country(16)
-                                    us(840) organization(1) gov(101)
-                                    csor(3) nistAlgorithm(4)
-                                    hashAlgs(2) 10 }
+id-sha3-512 OBJECT IDENTIFIER ::= {
+  joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+  csor(3) nistAlgorithm(4) hashAlgs(2) 10
+  }
 
 --
 -- ECDSA Keys, Signatures, and Curves
@@ -364,24 +358,24 @@ id-sha3-512 OBJECT IDENTIFIER ::= { joint-iso-itu-t(2) country(16)
 
 -- OID for ECDSA signatures with SHA3-256
 
-id-ecdsa-with-sha3-256 ::= { joint-iso-itu-t(2) country(16)
-                             us(840) organization(1) gov(101)
-                             csor(3) nistAlgorithm(4)
-                             sigAlgs(3) 10 }
+id-ecdsa-with-sha3-256 OBJECT IDENTIFIER ::= {
+  joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+  csor(3) nistAlgorithm(4) sigAlgs(3) 10
+  }
 
 -- OID for ECDSA signatures with SHA3-384
 
-id-ecdsa-with-sha3-384 ::= { joint-iso-itu-t(2) country(16)
-                             us(840) organization(1) gov(101)
-                             csor(3) nistAlgorithm(4)
-                             sigAlgs(3) 11 }
+id-ecdsa-with-sha3-384 OBJECT IDENTIFIER ::= {
+  joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+  csor(3) nistAlgorithm(4) sigAlgs(3) 11
+  }
 
 -- OID for ECDSA signatures with SHA3-512
 
-id-ecdsa-with-sha3-512 ::= { joint-iso-itu-t(2) country(16)
-                             us(840) organization(1) gov(101)
-                             csor(3) nistAlgorithm(4)
-                             sigAlgs(3) 12 }
+id-ecdsa-with-sha3-512 OBJECT IDENTIFIER ::= {
+  joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
+  csor(3) nistAlgorithm(4) sigAlgs(3) 12
+  }
 
 -- See [RFC5480] for ECDSA-Sig-Value, which is the format for
 -- the value of an ECDSA signature value.
