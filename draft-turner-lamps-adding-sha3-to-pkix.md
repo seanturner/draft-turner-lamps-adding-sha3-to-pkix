@@ -97,22 +97,22 @@ When using the id-sha3-224, id-sha3-s256, id-sha3-384, or id-sha3-512 algorithm 
 The ECDSA (Elliptic Curve Digital Signature Algorithm) is defined in [DSS].  When ECDSA is used in conjunction with one of the SHA-3 one-way hash functions the OID is, respectively:
 
 ~~~
-  id-ecdsa-with-sha3-224 ::= {
+  id-ecdsa-with-sha3-224 OBJECT IDENTIFIER ::= {
     joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
     csor(3) nistAlgorithm(4) sigAlgs(3) 9
     }
 
-  id-ecdsa-with-sha3-256 ::= {
+  id-ecdsa-with-sha3-256 OBJECT IDENTIFIER ::= {
     joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
     csor(3) nistAlgorithm(4) sigAlgs(3) 10
     }
 
-  id-ecdsa-with-sha3-384 ::= {
+  id-ecdsa-with-sha3-384 OBJECT IDENTIFIER ::= {
     joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) 
     csor(3) nistAlgorithm(4) sigAlgs(3) 11
     }
 
-  id-ecdsa-with-sha3-512 ::= {
+  id-ecdsa-with-sha3-512 OBJECT IDENTIFIER ::= {
     joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101)
     csor(3) nistAlgorithm(4) sigAlgs(3) 12
     }
